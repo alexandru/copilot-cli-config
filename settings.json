@@ -1,4 +1,7 @@
 {
   "model": "gpt-5.3-codex",
-  "disabledMcpServers": ["github-mcp-server"]
+  "disabledMcpServers": [
+    "github-mcp-server"
+  ],
+  "subagents": {}
 }
