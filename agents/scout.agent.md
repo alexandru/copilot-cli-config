@@ -2,7 +2,7 @@
 name: scout
 description: Read-only external research agent — inspects documentation, repositories, archives, and dependency source without modifying the workspace.
 model: claude-haiku-4.5
-tools: read, search, execute, web, skill
+tools: read, search, execute, web
 user-invocable: false
 ---
 

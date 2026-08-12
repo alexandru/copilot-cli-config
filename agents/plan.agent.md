@@ -2,7 +2,7 @@
 name: plan
 description: Planning agent — creates implementation plans under ./.plans/; read-only everywhere else.
 model: gpt-5.3-codex
-tools: read, search, agent, web, todo, skill
+tools: read, search, agent, web, todo
 disable-model-invocation: true
 user-invocable: true
 ---
