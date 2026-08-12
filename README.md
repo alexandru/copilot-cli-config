@@ -50,14 +50,29 @@ The point is to choose a default agent from which to start, and `build` should b
 
 ### Cellar
 
+Install [Coursier](https://get-coursier.io/docs/cli-installation) first:
+
+```sh
+## MacOS
+brew install coursier/formulas/coursier
+cs setup
+
+## Linux x86-64 (aka AMD64)
+curl -fL "https://github.com/coursier/launchers/raw/master/cs-x86_64-pc-linux.gz" | gzip -d > cs
+
+## Linux ARM64
+curl -fL "https://github.com/VirtusLab/coursier-m1/releases/latest/download/cs-aarch64-pc-linux.gz" | gzip -d > cs
+```
+
 Install [Cellar](https://github.com/VirtusLab/cellar) for JVM dependency API lookup:
 
 ```sh
 cs install --contrib cellar
 cellar --version
-```
 
-Without Coursier, download matching release archive, extract it, then place `cellar` on `PATH`.
+# Disable telemetry
+cellar telemetry disable
+```
 
 ## Updating Skills
 
