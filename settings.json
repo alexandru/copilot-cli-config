@@ -3,5 +3,11 @@
   "disabledMcpServers": [
     "github-mcp-server"
   ],
-  "subagents": {}
+  "subagents": {
+    "agents": {
+      "research": {
+        "model": "gpt-5.3-codex"
+      }
+    }
+  }
 }

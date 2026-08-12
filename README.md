@@ -19,8 +19,33 @@ Also define this alias, also in `~/.zshrc`, `~/.bashrc` or `~/.profile`:
 alias copilot=`copilot --agent build`
 ```
 
+## Main agents
+
+- `build`: implements changes; delegates evidence, research, and checks.
+- `plan`: investigates then writes only `.plans/` documents.
+- `ask`: answers from code and web; never edits or runs commands.
+- `explore`: codebase facts. `research`: external sources (`gpt-5.3-codex`). `task`: commands, tests, lint.
+- `general`: bounded mechanical changes and check loops.
+
+## Commands
+
+- `/agent`: choose `build`, `plan`, or `ask`.
+- `/plan-implementation`: create and save an implementation plan.
+- `/grill-me`: stress-test a plan or decision.
+- Built-ins: `/plan`, `/review`, `/security-review`, `/rubber-duck`, `/research`, `/skills`, `/model`.
+
+## Skills
+
+- `caveman`: concise replies.
+- `cellar`: JVM dependency APIs.
+- `codebase-design`, `domain-modeling`: design vocabulary and domain terms.
+- `diagnosing-bugs`, `tdd`: debugging and test-first work.
+- `grilling`: decision-tree questions.
+- `resolving-merge-conflicts`, `simplify`: conflict resolution and behavior-preserving cleanup.
+- `handoff`: session handoff; not directly invocable.
+
 ## Updating Skills
 
 ```
-
+make update-skills
 ```
