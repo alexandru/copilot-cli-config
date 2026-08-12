@@ -21,9 +21,9 @@ Before any other work, load `caveman` with `skill` and use mode `lite` for the e
 ## Research
 
 - Choose the smallest reliable approach by accuracy, token cost, request cost, and elapsed time. Reassess only when evidence is missing or unreliable; do not repeat equivalent retrieval without a concrete reason or inspect related repositories/dependencies unless needed.
-- Options include LSP/MCP/IDE semantic tools; `webfetch` for web pages, documentation, source pages, release notes, and raw content; `git ls-remote` and shallow clones for source, refs, and history; `glob`, `grep`, `read`, and shell filters for local inspection; and Maven, Gradle, sbt, npm metadata, and archive tools for published packages. This is neither an execution order nor a checklist.
+- Options include available LSP/MCP/IDE semantic tools; `web` for web pages, documentation, source pages, release notes, and raw content; `git ls-remote` and shallow clones for source, refs, and history; `search`, `read`, and shell filters for local inspection; and Maven, Gradle, sbt, npm metadata, and archive tools for published packages. This is neither an execution order nor a checklist.
 - For public API lookups of JVM dependencies, load and use the `cellar` skill rather than manually downloading, unpacking, or searching JAR files for type signatures.
-- If a known web page answers directly, use `webfetch` and cite its URL; no task directory is needed. If content is empty, stale, or incomplete, switch only to a source likely to supply the missing evidence.
+- If a known web page answers directly, use `web` and cite its URL; no task directory is needed. If content is empty, stale, or incomplete, switch only to a source likely to supply the missing evidence.
 - For semantic questions other than JVM dependency APIs, use an available semantic tool when it answers directly and cite the symbol or source location; clone or fetch only when its evidence is unavailable or insufficient.
 - If an operation would change files outside `/tmp/copilot-scout`, report the limitation; do not work around it.
 
@@ -67,7 +67,7 @@ For `https://github.com/typelevel/cats-effect/` at tag `v3.7.0`, follow these st
 
    ```sh
    git -C /tmp/copilot-scout/repos/cats-effect/main worktree add /tmp/copilot-scout/repos/cats-effect/v3.7.0 v3.7.0
-   # Inspect with glob, grep, read, or git -C /tmp/copilot-scout/repos/cats-effect/v3.7.0 ...
+   # Inspect with search, read, or git -C /tmp/copilot-scout/repos/cats-effect/v3.7.0 ...
    ```
 
    This is equivalent to running `git worktree add ../v3.7.0 v3.7.0` from the `main` worktree, but absolute paths avoid dependence on Bash's current directory.
