@@ -15,16 +15,19 @@ export COPILOT_HOME=/absolute/path/to/copilot-cli-config
 ```
 
 Also define this alias, also in `~/.zshrc`, `~/.bashrc` or `~/.profile`:
+
 ```bash
 alias copilot=`copilot --agent build`
 ```
+
+The point is to choose a default agent from which to start, and `build` should be that default.
 
 ## Main agents
 
 - `build`: implements changes; delegates evidence, research, and checks.
 - `plan`: investigates then writes only `.plans/` documents.
 - `ask`: answers from code and web; never edits or runs commands.
-- `explore`: codebase facts. `research`: external sources (`gpt-5.3-codex`). `task`: commands, tests, lint.
+- `explore`: codebase facts. `research`: external sources. `task`: commands, tests, lint.
 - `general`: bounded mechanical changes and check loops.
 
 ## Commands
