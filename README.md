@@ -17,7 +17,7 @@ export COPILOT_HOME=/absolute/path/to/copilot-cli-config
 Also define this alias, also in `~/.zshrc`, `~/.bashrc` or `~/.profile`:
 
 ```bash
-alias copilot=`copilot --agent build`
+alias copilot='copilot --agent build'
 ```
 
 The point is to choose a default agent from which to start, and `build` should be that default.
@@ -27,13 +27,14 @@ The point is to choose a default agent from which to start, and `build` should b
 - `build`: implements changes; delegates evidence, research, and checks.
 - `plan`: investigates and prepares implementation plan; read-only.
 - `ask`: answers from code and web; never edits or runs commands.
-- Built-ins: `explore` for codebase facts, `research` for external sources, `task` for commands, tests, and lint.
+- `scout`: read-only external documentation and dependency-source research.
+- Built-ins: `explore` for codebase facts and `task` for commands, tests, and lint.
 - `general`: bounded mechanical changes and check loops.
 
 ## Commands
 
 - `/agent`: choose `build`, `plan`, or `ask`.
-- `/plan-implementation`: create and save an implementation plan.
+- `/plan-implementation`: prepare an implementation plan without changing files.
 - `/grill-me`: stress-test a plan or decision.
 - Built-ins: `/plan`, `/review`, `/security-review`, `/rubber-duck`, `/research`, `/skills`, `/model`.
 
@@ -45,7 +46,7 @@ The point is to choose a default agent from which to start, and `build` should b
 - `diagnosing-bugs`, `tdd`: debugging and test-first work.
 - `grilling`: decision-tree questions.
 - `resolving-merge-conflicts`, `simplify`: conflict resolution and behavior-preserving cleanup.
-- `handoff`: session handoff; not directly invocable.
+- `handoff`: session handoff.
 
 ### Cellar
 

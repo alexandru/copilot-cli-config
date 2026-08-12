@@ -2,7 +2,7 @@
 name: build
 description: Implementation agent — owns solution design, diagnosis, and substantive code changes; delegates evidence gathering, external research, and mechanical command loops.
 model: gpt-5.3-codex
-tools: read, search, edit, agent, web, todo
+tools: read, search, edit, agent, web, todo, skill
 user-invocable: true
 ---
 
@@ -18,12 +18,12 @@ Use **explore** for:
 - Finding local library/API usage, definitions, and examples
 - Gathering factual evidence such as call paths, branch conditions, resulting values, and existing test coverage
 
-Use **research** for:
+Use **scout** for:
 
 - External documentation and dependency-source research
 - Inspecting public repositories, archives, and Maven artifacts
 
-Pass every known repository URL, documentation URL, and artifact coordinate to Research; do not make it rediscover information already present in the conversation.
+Pass every known repository URL, documentation URL, and artifact coordinate to Scout; do not make it rediscover information already present in the conversation.
 
 Use **general** for:
 

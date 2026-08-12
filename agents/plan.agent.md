@@ -2,7 +2,7 @@
 name: plan
 description: Planning agent — creates implementation plans under ./.plans/; read-only everywhere else.
 model: gpt-5.3-codex
-tools: read, search, agent, web, todo
+tools: read, search, agent, web, todo, skill
 disable-model-invocation: true
 user-invocable: true
 ---
@@ -19,7 +19,7 @@ Use **explore** for:
 - Finding local library/API usage, definitions, and examples
 - Gathering factual evidence such as call paths, branch conditions, resulting values, and existing test coverage
 
-Use **research** for:
+Use **scout** for:
 
 - External documentation and dependency-source research
 - Inspecting public repositories, archives, and Maven artifacts

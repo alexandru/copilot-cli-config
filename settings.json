@@ -5,8 +5,8 @@
   ],
   "subagents": {
     "agents": {
-      "research": {
-        "model": "gpt-5.3-codex"
+      "scout": {
+        "model": "claude-haiku-4.5"
       }
     }
   }

@@ -2,7 +2,7 @@
 name: ask
 description: Conversational agent for discussion, questions, and exploring the codebase together. Read-only.
 model: gpt-5.3-codex
-tools: read, search, web
+tools: read, search, agent, web, skill
 disable-model-invocation: true
 user-invocable: true
 ---
