@@ -17,3 +17,6 @@ session-store.db-shm
 session-store.db-wal
 sidebar-sessions-state/
 skills/**/agents/openai.*
+data.*
+repo-*.*
+run/
