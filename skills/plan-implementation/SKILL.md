@@ -39,7 +39,7 @@ Input: $ARGUMENTS
 
 3. **Save the plan**
 
-   Write the plan directly to a descriptive markdown file at `./.plans/<descriptive-kebab-case-name>.md`.
+    Add a TODO item to write the plan to a descriptive markdown file at `./.plans/<descriptive-kebab-case-name>.md`.
 
    The markdown plan must include:
 
@@ -56,9 +56,4 @@ Input: $ARGUMENTS
 
    End with:
 
-   > **Ready to execute?** Switch to **build** (Tab) or assign to the appropriate agent to begin implementation.
-
-## Requirements
-
-- This skill requires **normal execution mode** to write the plan file under `./.plans/`. The built-in `/plan` command, by contrast, offers a protected private plan workspace — prefer the built-in `/plan` when you want that behavior.
-- Do not modify any file outside `./.plans/`.
+   > **Ready to execute?** Switch to **build** or assign to the appropriate agent to begin implementation.

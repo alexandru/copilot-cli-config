@@ -25,9 +25,9 @@ The point is to choose a default agent from which to start, and `build` should b
 ## Main agents
 
 - `build`: implements changes; delegates evidence, research, and checks.
-- `plan`: investigates then writes only `.plans/` documents.
+- `plan`: investigates and prepares implementation plan; read-only.
 - `ask`: answers from code and web; never edits or runs commands.
-- `explore`: codebase facts. `research`: external sources. `task`: commands, tests, lint.
+- Built-ins: `explore` for codebase facts, `research` for external sources, `task` for commands, tests, and lint.
 - `general`: bounded mechanical changes and check loops.
 
 ## Commands
@@ -46,6 +46,17 @@ The point is to choose a default agent from which to start, and `build` should b
 - `grilling`: decision-tree questions.
 - `resolving-merge-conflicts`, `simplify`: conflict resolution and behavior-preserving cleanup.
 - `handoff`: session handoff; not directly invocable.
+
+### Cellar
+
+Install [Cellar](https://github.com/VirtusLab/cellar) for JVM dependency API lookup:
+
+```sh
+cs install --contrib cellar
+cellar --version
+```
+
+Without Coursier, download matching release archive, extract it, then place `cellar` on `PATH`.
 
 ## Updating Skills
 
