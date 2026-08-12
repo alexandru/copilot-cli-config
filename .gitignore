@@ -1,1 +1,18 @@
-opencode.jsonc
+# Local/runtime Copilot artifacts only — never source configuration.
+# Tracked on purpose: settings.json, agents/, skills/, lsp-config.json, README.md,
+# Makefile, skills-lock.json, package.json, test/.
+# .plans/ is intentionally NOT ignored.
+
+*.cache
+cache/
+command-history-state.json
+command-history-state/
+config.json
+logs/
+permissions-config.json
+session-state/
+session-store.db
+session-store.db-journal
+session-store.db-shm
+session-store.db-wal
+sidebar-sessions-state/
