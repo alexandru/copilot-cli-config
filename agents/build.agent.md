@@ -1,8 +1,14 @@
 ---
 name: build
-description: Implementation agent — owns solution design, diagnosis, and substantive code changes; delegates evidence gathering, external research, and mechanical command loops.
+description: "Implementation agent — owns solution design, diagnosis, and substantive code changes; delegates evidence gathering, external research, and mechanical command loops."
 model: gpt-5.3-codex
-tools: read, search, edit, agent, web, todo
+tools:
+  - read
+  - search
+  - edit
+  - agent
+  - web
+  - todo
 user-invocable: true
 ---
 
