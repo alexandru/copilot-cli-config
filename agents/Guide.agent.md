@@ -1,7 +1,6 @@
 ---
-name: ask
+name: Guide
 description: "Conversational agent for discussion, questions, and exploring the codebase together. Read-only."
-model: gpt-5.3-codex
 tools:
   - read
   - search

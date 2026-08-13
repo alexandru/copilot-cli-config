@@ -20,3 +20,5 @@ skills/**/agents/openai.*
 data.*
 repo-*.*
 run/
+opencode.jsonc
+settings.json

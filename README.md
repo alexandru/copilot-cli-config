@@ -17,23 +17,38 @@ export COPILOT_HOME=/absolute/path/to/copilot-cli-config
 Also define this alias, also in `~/.zshrc`, `~/.bashrc` or `~/.profile`:
 
 ```bash
-alias copilot='copilot --agent build'
+alias copilot='copilot --agent Builder'
 ```
 
-The point is to choose a default agent from which to start, and `build` should be that default.
+The point is to choose a default agent from which to start, and `Builder` should be that default.
+
+Choose a model preset before first use and whenever you want to switch profiles:
+
+```sh
+./bin/copilot-switch work
+# or
+./bin/copilot-switch personal
+```
+
+Stable settings live in `settings.common.json`; presets live in
+`settings.presets.json`. The switcher deep-merges common settings with the selected
+preset and generates `settings.json`; agent definitions stay unchanged. Presets may
+inherit from multiple presets with `extends`. Arrays are replaced, objects are
+merged recursively, and presets marked `common: true` are hidden from the list.
+Model variants are represented by Copilot CLI's `effortLevel` setting.
 
 ## Main agents
 
-- `build`: implements changes; delegates evidence, research, and checks.
-- `plan`: investigates and prepares implementation plan; read-only.
-- `ask`: answers from code and web; never edits or runs commands.
-- `scout`: read-only external documentation and dependency-source research.
-- Built-ins: `explore` for codebase facts and `task` for commands, tests, and lint.
-- `general`: bounded mechanical changes and check loops.
+- `Builder`: implements changes; delegates evidence, research, and checks.
+- `Planner`: investigates and prepares implementation plans; read-only.
+- `Guide`: answers from code and web; never edits or runs commands.
+- `Worker`: bounded mechanical changes and check loops.
+- `Explorer`: read-only codebase evidence gathering.
+- `Scout`: read-only external documentation and dependency-source research.
 
 ## Commands
 
-- `/agent`: choose `build`, `plan`, or `ask`.
+- `/agent`: choose `Builder`, `Planner`, or `Guide`.
 - `/plan-implementation`: prepare an implementation plan without changing files.
 - `/grill-me`: stress-test a plan or decision.
 - Built-ins: `/plan`, `/review`, `/security-review`, `/rubber-duck`, `/research`, `/skills`, `/model`.

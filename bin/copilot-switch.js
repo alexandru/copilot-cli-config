@@ -1,0 +1,123 @@
+#!/usr/bin/env node
+
+const fs = require("node:fs");
+const path = require("node:path");
+
+const root = path.resolve(__dirname, "..");
+const commonFile = path.join(root, "settings.common.json");
+const presetsFile = path.join(root, "settings.presets.json");
+const settingsFile = path.join(root, "settings.json");
+const presetMetadataKeys = new Set(["common", "extends"]);
+
+function fail(message) {
+  console.error(`Error: ${message}`);
+  process.exit(1);
+}
+
+function loadJson(file) {
+  try {
+    return JSON.parse(fs.readFileSync(file, "utf8"));
+  } catch (error) {
+    fail(`Failed to read ${path.relative(root, file)}: ${error.message}`);
+  }
+}
+
+function deepMerge(source, target) {
+  if (target === null || target === undefined) return source;
+  if (source === null || source === undefined) return target;
+  if (Array.isArray(target)) return target;
+  if (typeof target !== "object") return target;
+  if (typeof source !== "object" || Array.isArray(source)) return target;
+
+  const result = { ...source };
+  for (const [key, value] of Object.entries(target)) {
+    if (
+      Object.prototype.hasOwnProperty.call(result, key) &&
+      typeof result[key] === "object" &&
+      !Array.isArray(result[key]) &&
+      typeof value === "object" &&
+      value !== null &&
+      !Array.isArray(value)
+    ) {
+      result[key] = deepMerge(result[key], value);
+    } else {
+      result[key] = value;
+    }
+  }
+  return result;
+}
+
+function stripPresetMetadata(config) {
+  const result = { ...config };
+  for (const key of presetMetadataKeys) delete result[key];
+  return result;
+}
+
+function resolvePreset(presets, presetName, seen = []) {
+  if (!Object.prototype.hasOwnProperty.call(presets, presetName)) {
+    fail(`Preset '${presetName}' not found in settings.presets.json`);
+  }
+  if (seen.includes(presetName)) {
+    fail(`Circular preset inheritance detected: ${seen.concat(presetName).join(" -> ")}`);
+  }
+
+  const preset = presets[presetName];
+  if (!preset || typeof preset !== "object" || Array.isArray(preset)) {
+    fail(`Preset '${presetName}' must be an object`);
+  }
+
+  const parentNames = preset.extends;
+  if (parentNames === undefined) return stripPresetMetadata(preset);
+  if (!Array.isArray(parentNames) || parentNames.some((name) => typeof name !== "string")) {
+    fail(`Preset '${presetName}' has invalid 'extends'; expected an array of preset names`);
+  }
+
+  const nextSeen = seen.concat(presetName);
+  const inherited = parentNames.reduce(
+    (merged, parentName) => deepMerge(merged, resolvePreset(presets, parentName, nextSeen)),
+    {},
+  );
+  return stripPresetMetadata(deepMerge(inherited, preset));
+}
+
+function listPresets(presets) {
+  return Object.keys(presets)
+    .filter((name) => presets[name]?.common !== true)
+    .map((name) => `  - ${name}`)
+    .join("\n");
+}
+
+function main() {
+  const presets = loadJson(presetsFile);
+  const presetName = process.argv[2];
+
+  if (!presetName) {
+    console.log("Copilot CLI configuration preset switcher\n");
+    console.log("Usage: copilot-switch <preset-name>\n");
+    console.log(`Available presets:\n${listPresets(presets)}`);
+    return;
+  }
+
+  if (!Object.prototype.hasOwnProperty.call(presets, presetName)) {
+    fail(`Preset '${presetName}' not found. Available presets:\n${listPresets(presets)}`);
+  }
+
+  const common = loadJson(commonFile);
+  const preset = resolvePreset(presets, presetName);
+  const settings = deepMerge(common, preset);
+
+  fs.writeFileSync(settingsFile, `${JSON.stringify(settings, null, 2)}\n`);
+
+  console.log(`Successfully switched to preset: ${presetName}`);
+  console.log("Generated settings.json");
+  if (settings.model) {
+    console.log(`Default model: ${settings.model} (${settings.effortLevel ?? "default"})`);
+  }
+  for (const [agent, config] of Object.entries(settings.subagents?.agents ?? {})) {
+    console.log(
+      `  ${agent}: ${config.model ?? "inherit"} (${config.effortLevel ?? "inherit"})`,
+    );
+  }
+}
+
+main();

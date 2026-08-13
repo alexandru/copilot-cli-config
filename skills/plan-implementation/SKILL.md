@@ -56,4 +56,4 @@ Input: $ARGUMENTS
 
    End with:
 
-   > **Ready to execute?** Switch to **build** or assign to the appropriate agent to begin implementation.
+> **Ready to execute?** Switch to **Builder** or assign to the appropriate agent to begin implementation.

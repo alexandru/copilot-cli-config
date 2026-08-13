@@ -1,0 +1,66 @@
+{
+  "work": {
+    "model": "github-copilot/gpt-5.3-codex",
+    "effortLevel": "medium",
+    "subagents": {
+      "agents": {
+        "Builder": {
+          "model": "github-copilot/gpt-5.3-codex",
+          "effortLevel": "medium"
+        },
+        "Planner": {
+          "model": "github-copilot/gpt-5.3-codex",
+          "effortLevel": "medium"
+        },
+        "Guide": {
+          "model": "github-copilot/gpt-5.3-codex",
+          "effortLevel": "medium"
+        },
+        "Worker": {
+          "model": "github-copilot/claude-haiku-4.5",
+          "effortLevel": "high"
+        },
+        "Explorer": {
+          "model": "github-copilot/claude-haiku-4.5",
+          "effortLevel": "high"
+        },
+        "Scout": {
+          "model": "github-copilot/claude-haiku-4.5",
+          "effortLevel": "high"
+        }
+      }
+    }
+  },
+  "personal": {
+    "model": "github-copilot/claude-sonnet-5",
+    "effortLevel": "medium",
+    "subagents": {
+      "agents": {
+        "Builder": {
+          "model": "github-copilot/claude-sonnet-5",
+          "effortLevel": "medium"
+        },
+        "Planner": {
+          "model": "github-copilot/claude-sonnet-5",
+          "effortLevel": "medium"
+        },
+        "Guide": {
+          "model": "github-copilot/claude-sonnet-5",
+          "effortLevel": "medium"
+        },
+        "Worker": {
+          "model": "github-copilot/gpt-5.6-luna",
+          "effortLevel": "medium"
+        },
+        "Explorer": {
+          "model": "github-copilot/gpt-5.6-luna",
+          "effortLevel": "medium"
+        },
+        "Scout": {
+          "model": "github-copilot/gpt-5.6-luna",
+          "effortLevel": "medium"
+        }
+      }
+    }
+  }
+}
