@@ -22,3 +22,4 @@ repo-*.*
 run/
 opencode.jsonc
 settings.json
+ide
