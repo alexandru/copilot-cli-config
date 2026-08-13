@@ -5,6 +5,7 @@ tools:
   - read
   - search
   - edit
+  - execute
   - agent
   - web
   - todo
