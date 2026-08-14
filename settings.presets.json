@@ -13,16 +13,13 @@
           "effortLevel": "medium"
         },
         "Explorer": {
-          "model": "claude-haiku-4.5",
-          "effortLevel": "high"
+          "model": "claude-haiku-4.5"
         },
         "Fixer": {
-          "model": "claude-haiku-4.5",
-          "effortLevel": "high"
+          "model": "claude-haiku-4.5"
         },
         "Librarian": {
-          "model": "claude-haiku-4.5",
-          "effortLevel": "high"
+          "model": "claude-haiku-4.5"
         }
       }
     }
