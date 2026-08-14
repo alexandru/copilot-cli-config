@@ -45,7 +45,7 @@ Main agents:
 
 Sub-agents:
 
-- `Fixer`: bounded mechanical changes and check loops.
+- `Junior`: bounded execution and shell-assisted exploration.
 - `Explorer`: read-only codebase evidence gathering.
 - `Librarian`: read-only external documentation and dependency-source research.
 

@@ -16,7 +16,7 @@
         "Explorer": {
           "model": "claude-haiku-4.5"
         },
-        "Fixer": {
+        "Junior": {
           "model": "claude-haiku-4.5"
         },
         "Librarian": {
@@ -67,7 +67,7 @@
           "model": "gpt-5.6-luna",
           "effortLevel": "medium"
         },
-        "Fixer": {
+        "Junior": {
           "model": "gpt-5.6-luna",
           "effortLevel": "medium"
         },
