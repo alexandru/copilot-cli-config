@@ -1,5 +1,5 @@
 ---
-name: Worker
+name: Fixer
 description: "General-purpose agent for researching complex questions and executing multi-step tasks. Use this agent to execute multiple units of work in parallel."
 tools:
   - read
@@ -10,6 +10,8 @@ tools:
   - web
 user-invocable: false
 ---
+
+Use `agent` only with custom **Explorer** and **Librarian** agents. Do not invoke Copilot built-in agents.
 
 Before doing any other work, use the `skill` tool to load `caveman`. Apply mode `lite` for the entire session.
 

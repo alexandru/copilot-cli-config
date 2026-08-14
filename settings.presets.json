@@ -12,49 +12,17 @@
           "model": "gpt-5.3-codex",
           "effortLevel": "medium"
         },
-        "Guide": {
-          "model": "gpt-5.3-codex",
-          "effortLevel": "medium"
-        },
-        "Worker": {
-          "model": "claude-haiku-4.5",
-          "effortLevel": "high"
-        },
         "Explorer": {
           "model": "claude-haiku-4.5",
           "effortLevel": "high"
         },
-        "Scout": {
+        "Fixer": {
           "model": "claude-haiku-4.5",
           "effortLevel": "high"
         },
-        "explore": {
+        "Librarian": {
           "model": "claude-haiku-4.5",
           "effortLevel": "high"
-        },
-        "task": {
-          "model": "claude-haiku-4.5",
-          "effortLevel": "high"
-        },
-        "general-purpose": {
-          "model": "claude-haiku-4.5",
-          "effortLevel": "high"
-        },
-        "rubber-duck": {
-          "model": "claude-haiku-4.5",
-          "effortLevel": "high"
-        },
-        "code-review": {
-          "model": "gpt-5.3-codex",
-          "effortLevel": "medium"
-        },
-        "research": {
-          "model": "gpt-5.3-codex",
-          "effortLevel": "medium"
-        },
-        "security-review": {
-          "model": "gpt-5.3-codex",
-          "effortLevel": "medium"
         }
       }
     }
@@ -72,48 +40,16 @@
           "model": "claude-sonnet-5",
           "effortLevel": "medium"
         },
-        "Guide": {
-          "model": "claude-sonnet-5",
-          "effortLevel": "medium"
-        },
-        "Worker": {
-          "model": "gpt-5.6-luna",
-          "effortLevel": "medium"
-        },
         "Explorer": {
           "model": "gpt-5.6-luna",
           "effortLevel": "medium"
         },
-        "Scout": {
+        "Fixer": {
           "model": "gpt-5.6-luna",
           "effortLevel": "medium"
         },
-        "explore": {
+        "Librarian": {
           "model": "gpt-5.6-luna",
-          "effortLevel": "medium"
-        },
-        "task": {
-          "model": "gpt-5.6-luna",
-          "effortLevel": "medium"
-        },
-        "general-purpose": {
-          "model": "gpt-5.6-luna",
-          "effortLevel": "medium"
-        },
-        "rubber-duck": {
-          "model": "gpt-5.6-luna",
-          "effortLevel": "medium"
-        },
-        "code-review": {
-          "model": "claude-sonnet-5",
-          "effortLevel": "medium"
-        },
-        "research": {
-          "model": "claude-sonnet-5",
-          "effortLevel": "medium"
-        },
-        "security-review": {
-          "model": "claude-sonnet-5",
           "effortLevel": "medium"
         }
       }

@@ -39,14 +39,13 @@ The point is to choose a default agent from which to start, and `Builder` should
 Main agents:
 
 - `Builder`: implements changes; delegates evidence, research, and checks.
-- `Planner`: investigates and prepares implementation plans; read-only.
-- `Guide`: answers from code and web; never edits or runs commands.
+- `Planner`: answers questions and prepares implementation plans; read-only.
 
 Sub-agents:
 
-- `Worker`: bounded mechanical changes and check loops.
+- `Fixer`: bounded mechanical changes and check loops.
 - `Explorer`: read-only codebase evidence gathering.
-- `Scout`: read-only external documentation and dependency-source research.
+- `Librarian`: read-only external documentation and dependency-source research.
 
 ## Defined commands
 
