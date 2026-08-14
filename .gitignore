@@ -23,3 +23,4 @@ run/
 opencode.jsonc
 settings.json
 ide
+vscode.session.*
