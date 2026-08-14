@@ -1,0 +1,20 @@
+// MCP servers and built-in subagents use separate settings.
+{
+  "disabledMcpServers": [
+    "github-mcp-server"
+  ],
+  "subagents": {
+    "disabledSubagents": [
+      "explore",
+      "task",
+      "general-purpose",
+      "code-review",
+      "research",
+      "security-review"
+    ]
+  },
+  // Rubber Duck is controlled separately from subagents.
+  "builtInAgents": {
+    "rubberDuck": false
+  }
+}

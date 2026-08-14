@@ -3,6 +3,8 @@
 # Makefile, skills-lock.json, package.json, test/.
 # .plans/ is intentionally NOT ignored.
 
+node_modules/
+
 *.cache
 cache/
 command-history-state.json

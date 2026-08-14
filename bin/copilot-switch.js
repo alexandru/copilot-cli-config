@@ -2,10 +2,11 @@
 
 const fs = require("node:fs");
 const path = require("node:path");
+const { parse } = require("comment-json");
 
 const root = path.resolve(__dirname, "..");
-const commonFile = path.join(root, "settings.common.json");
-const presetsFile = path.join(root, "settings.presets.json");
+const commonFile = path.join(root, "settings.common.jsonc");
+const presetsFile = path.join(root, "settings.presets.jsonc");
 const settingsFile = path.join(root, "settings.json");
 const presetMetadataKeys = new Set(["common", "extends"]);
 
@@ -16,7 +17,7 @@ function fail(message) {
 
 function loadJson(file) {
   try {
-    return JSON.parse(fs.readFileSync(file, "utf8"));
+    return parse(fs.readFileSync(file, "utf8"));
   } catch (error) {
     fail(`Failed to read ${path.relative(root, file)}: ${error.message}`);
   }
@@ -55,7 +56,7 @@ function stripPresetMetadata(config) {
 
 function resolvePreset(presets, presetName, seen = []) {
   if (!Object.prototype.hasOwnProperty.call(presets, presetName)) {
-    fail(`Preset '${presetName}' not found in settings.presets.json`);
+    fail(`Preset '${presetName}' not found in settings.presets.jsonc`);
   }
   if (seen.includes(presetName)) {
     fail(`Circular preset inheritance detected: ${seen.concat(presetName).join(" -> ")}`);

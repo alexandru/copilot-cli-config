@@ -31,8 +31,10 @@ The point is to choose a default agent from which to start, and `Builder` should
 ```
 
 **WARN:** must run `copilot-switch` at least once, otherwise `settings.json` is missing. The switcher generates `settings.json` from:
-- `settings.common.json` 
-- `settings.presets.json`
+- `settings.common.jsonc`
+- `settings.presets.jsonc`
+
+Both JSONC inputs support comments.
 
 ## Defined agents
 
