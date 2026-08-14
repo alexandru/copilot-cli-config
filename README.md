@@ -57,7 +57,6 @@ Sub-agents:
 
 ## Defined skills
 
-- `caveman`: concise replies.
 - `cellar`: query the APIs of JVM dependencies (Scala, Java).
 - `codebase-design`: deep-module design vocabulary and principles.
 - `domain-modeling`: domain language and architectural decisions.

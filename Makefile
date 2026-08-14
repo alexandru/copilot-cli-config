@@ -11,8 +11,6 @@
 update-skills:
 	npx skills add https://github.com/alexandru/skills/ -y --skill \
 		simplify
-	npx skills add https://github.com/JuliusBrussee/caveman/ -y --skill \
-		caveman
 	npx skills add https://github.com/mattpocock/skills -y --skill \
 		codebase-design \
 		diagnosing-bugs \
