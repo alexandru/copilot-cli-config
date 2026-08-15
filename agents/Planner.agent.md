@@ -23,6 +23,7 @@ Delegation boundaries:
 
 - Invoke only the custom **Explorer**, **Librarian**, and **SafeShell** agents.
 - Do not invoke Copilot built-in agents.
+- Do not attempt to work-around your read-only restrictions.
 
 Use **Explorer** for:
 
