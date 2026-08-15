@@ -28,6 +28,9 @@ The point is to choose a default agent from which to start, and `Builder` should
 ./bin/copilot-switch work
 # or
 ./bin/copilot-switch personal
+# or, use automatic model selection for Builder and Planner
+./bin/copilot-switch work-auto
+./bin/copilot-switch personal-auto
 ```
 
 **WARN:** must run `copilot-switch` at least once, otherwise `settings.json` is missing. The switcher generates `settings.json` from:

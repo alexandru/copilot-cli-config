@@ -1,16 +1,16 @@
 // JSONC input: comments supported.
 {
   "work": {
-    "model": "auto",
+    "model": "gpt-5.3-codex",
     "effortLevel": "medium",
     "subagents": {
       "agents": {
         "Builder": {
-          "model": "auto",
+          "model": "gpt-5.3-codex",
           "effortLevel": "medium"
         },
         "Planner": {
-          "model": "auto",
+          "model": "gpt-5.3-codex",
           "effortLevel": "medium"
         },
         "Explorer": {
@@ -54,16 +54,16 @@
     }
   },
   "personal": {
-    "model": "auto",
+    "model": "claude-sonnet-5",
     "effortLevel": "medium",
     "subagents": {
       "agents": {
         "Builder": {
-          "model": "auto",
+          "model": "claude-sonnet-5",
           "effortLevel": "medium"
         },
         "Planner": {
-          "model": "auto",
+          "model": "claude-sonnet-5",
           "effortLevel": "medium"
         },
         "Explorer": {
@@ -110,6 +110,34 @@
         "security-review": {
           "model": "claude-sonnet-5",
           "effortLevel": "medium"
+        }
+      }
+    }
+  },
+  "work-auto": {
+    "extends": ["work"],
+    "model": "auto",
+    "subagents": {
+      "agents": {
+        "Builder": {
+          "model": "auto"
+        },
+        "Planner": {
+          "model": "auto"
+        }
+      }
+    }
+  },
+  "personal-auto": {
+    "extends": ["personal"],
+    "model": "auto",
+    "subagents": {
+      "agents": {
+        "Builder": {
+          "model": "auto"
+        },
+        "Planner": {
+          "model": "auto"
         }
       }
     }
