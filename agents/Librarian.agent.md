@@ -5,6 +5,7 @@ tools:
   - read
   - search
   - execute
+  - agent
   - web
 user-invocable: false
 ---
@@ -18,6 +19,11 @@ You may change files only inside `/tmp/copilot-librarian`.
 Never create, modify, move, or delete anything outside `/tmp/copilot-librarian`, including through Bash commands, redirects, scripts, Git, or subprocesses.
 
 If unsure whether a command writes elsewhere, do not run it.
+
+## Delegation
+
+- Invoke only the custom **SafeShell** agent; do not invoke Copilot built-in agents or other custom agents.
+- Use **SafeShell** to execute one exact read-only shell expression. Identify the expression unambiguously and interpret the reported facts yourself.
 
 ## Research
 

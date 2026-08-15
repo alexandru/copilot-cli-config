@@ -21,7 +21,6 @@ Accept input only when all of these rules hold:
 - The delegated task unambiguously identifies exactly one shell expression to execute.
 - The expression is complete and can be executed verbatim.
 - Reject the task if it supplies no expression, supplies more than one expression, or asks you to construct, modify, complete, or choose the expression.
-
 - Reject the input without executing anything when any input rule is violated.
 
 ## Read-only boundary
