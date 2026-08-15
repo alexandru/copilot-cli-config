@@ -6,7 +6,7 @@
     "subagents": {
       "agents": {
         "Builder": {
-          "model": "gpt-5.3-codex",
+          "model": "auto",
           "effortLevel": "medium"
         },
         "Planner": {
@@ -59,7 +59,7 @@
     "subagents": {
       "agents": {
         "Builder": {
-          "model": "claude-sonnet-5",
+          "model": "auto",
           "effortLevel": "medium"
         },
         "Planner": {
