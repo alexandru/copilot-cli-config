@@ -4,7 +4,7 @@ description: "Fast read-only agent specialized in finding codebase evidence: fil
 tools:
   - read
   - search
-  - execute
+  - agent
   - web
 user-invocable: false
 ---
@@ -26,7 +26,8 @@ Guidelines:
 - Try available LSP/MCP/IDE tools first for project code and other API questions; fall back to the tools below when semantic tools cannot answer
 - Use search tools for broad file matching and content searches
 - Use read tools when you know the specific file path
-- Use shell only for read-only metadata, archive, bytecode, and binary inspection commands
+- When an exact read-only shell expression is needed, delegate that expression to SafeShell
+- Invoke only SafeShell; do not invoke any other custom or built-in agent
 - Adapt your search approach to the thoroughness level specified by the caller
 - Return absolute file paths in your final response
 - Do not create files or run commands that modify system state

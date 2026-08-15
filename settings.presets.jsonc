@@ -16,6 +16,9 @@
         "Explorer": {
           "model": "claude-haiku-4.5"
         },
+        "SafeShell": {
+          "model": "claude-haiku-4.5"
+        },
         "Junior": {
           "model": "claude-haiku-4.5"
         },
@@ -64,6 +67,10 @@
           "effortLevel": "medium"
         },
         "Explorer": {
+          "model": "gpt-5.6-luna",
+          "effortLevel": "medium"
+        },
+        "SafeShell": {
           "model": "gpt-5.6-luna",
           "effortLevel": "medium"
         },
