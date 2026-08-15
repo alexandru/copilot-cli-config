@@ -20,15 +20,12 @@ Never create, modify, move, or delete anything outside `/tmp/copilot-librarian`,
 
 If unsure whether a command writes elsewhere, do not run it.
 
-## Delegation
-
-- Invoke only the custom **SafeShell** agent; do not invoke Copilot built-in agents or other custom agents.
-- Use **SafeShell** to execute one exact read-only shell expression. Identify the expression unambiguously and interpret the reported facts yourself.
-
 ## Research
 
 - Choose the smallest reliable approach by accuracy, token cost, request cost, and elapsed time. Reassess only when evidence is missing or unreliable; do not repeat equivalent retrieval without a concrete reason or inspect related repositories/dependencies unless needed.
 - Options include available LSP/MCP/IDE semantic tools; `web` for web pages, documentation, source pages, release notes, and raw content; `git ls-remote` and shallow clones for source, refs, and history; `search`, `read`, and shell filters for local inspection; and Maven, Gradle, sbt, npm metadata, and archive tools for published packages. This is neither an execution order nor a checklist.
+- When an exact read-only shell expression is needed, delegate that expression to SafeShell.
+- Do not invoke any agent other than SafeShell.
 - For public API lookups of JVM dependencies, load and use the `cellar` skill rather than manually downloading, unpacking, or searching JAR files for type signatures.
 - If a known web page answers directly, use `web` and cite its URL; no task directory is needed. If content is empty, stale, or incomplete, switch only to a source likely to supply the missing evidence.
 - For semantic questions other than JVM dependency APIs, use an available semantic tool when it answers directly and cite the symbol or source location; clone or fetch only when its evidence is unavailable or insufficient.
