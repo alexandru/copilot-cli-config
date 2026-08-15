@@ -1,7 +1,7 @@
 // JSONC input: comments supported.
 {
   "work": {
-    "model": "gpt-5.3-codex",
+    "model": "auto",
     "effortLevel": "medium",
     "subagents": {
       "agents": {
@@ -10,7 +10,7 @@
           "effortLevel": "medium"
         },
         "Planner": {
-          "model": "gpt-5.3-codex",
+          "model": "auto",
           "effortLevel": "medium"
         },
         "Explorer": {
@@ -54,7 +54,7 @@
     }
   },
   "personal": {
-    "model": "claude-sonnet-5",
+    "model": "auto",
     "effortLevel": "medium",
     "subagents": {
       "agents": {
@@ -63,7 +63,7 @@
           "effortLevel": "medium"
         },
         "Planner": {
-          "model": "claude-sonnet-5",
+          "model": "auto",
           "effortLevel": "medium"
         },
         "Explorer": {

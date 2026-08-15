@@ -9,6 +9,7 @@ const commonFile = path.join(root, "settings.common.jsonc");
 const presetsFile = path.join(root, "settings.presets.jsonc");
 const settingsFile = path.join(root, "settings.json");
 const presetMetadataKeys = new Set(["common", "extends"]);
+const primaryAgents = ["Builder", "Planner"];
 
 function fail(message) {
   console.error(`Error: ${message}`);
@@ -88,6 +89,45 @@ function listPresets(presets) {
     .join("\n");
 }
 
+function activeAgentEntries(settings) {
+  const disabled = new Set(settings.subagents?.disabledSubagents ?? []);
+  if (settings.builtInAgents?.rubberDuck === false) disabled.add("rubber-duck");
+
+  const primaryEntries = primaryAgents.map((name) => [
+    name,
+    { model: settings.model, effortLevel: settings.effortLevel },
+  ]);
+  const subagentEntries = Object.entries(settings.subagents?.agents ?? {}).filter(
+    ([name]) => !disabled.has(name) && !primaryAgents.includes(name),
+  );
+  return primaryEntries.concat(subagentEntries);
+}
+
+function printAgentTable(entries) {
+  if (entries.length === 0) return;
+
+  const agentWidth = Math.max("Agent".length, ...entries.map(([name]) => name.length));
+  const modelWidth = Math.max(
+    "Model".length,
+    ...entries.map(([, config]) => (config.model ?? "-").length),
+  );
+  const effortWidth = Math.max(
+    "Effort".length,
+    ...entries.map(([, config]) => (config.effortLevel ?? "-").length),
+  );
+  const pad = (value, width) => value.padEnd(width);
+
+  console.log(`  ${pad("Agent", agentWidth)} │ ${pad("Model", modelWidth)} │ Effort`);
+  console.log(
+    `  ${"─".repeat(agentWidth)}─┼─${"─".repeat(modelWidth)}─┼─${"─".repeat(effortWidth)}`,
+  );
+  for (const [name, config] of entries) {
+    console.log(
+      `  ${pad(name, agentWidth)} │ ${pad(config.model ?? "-", modelWidth)} │ ${config.effortLevel ?? "-"}`,
+    );
+  }
+}
+
 function main() {
   const presets = loadJson(presetsFile);
   const presetName = process.argv[2];
@@ -111,14 +151,18 @@ function main() {
 
   console.log(`Successfully switched to preset: ${presetName}`);
   console.log("Generated settings.json");
+  console.log("");
   if (settings.model) {
     console.log(`Default model: ${settings.model} (${settings.effortLevel ?? "default"})`);
+    console.log("");
   }
-  for (const [agent, config] of Object.entries(settings.subagents?.agents ?? {})) {
-    console.log(
-      `  ${agent}: ${config.model ?? "inherit"} (${config.effortLevel ?? "inherit"})`,
-    );
+  const agentEntries = activeAgentEntries(settings);
+  if (agentEntries.length > 0) {
+    console.log("Subagents:");
+    console.log("");
+    printAgentTable(agentEntries);
   }
+  console.log("");
 }
 
 main();
