@@ -39,7 +39,7 @@ Input: $ARGUMENTS
 
 3. **Save the plan**
 
-    Add a TODO item to write the plan to a descriptive markdown file at `./.plans/<descriptive-kebab-case-name>.md`.
+    Add a TODO item to write the plan to a descriptive markdown file at `./specs/<descriptive-kebab-case-name>/plan.md`.
 
    The markdown plan must include:
 
@@ -54,7 +54,7 @@ Input: $ARGUMENTS
 
 4. **Hand off**
 
-   If you have file writing permission for `./.plans/`, then write the plan to the file.
+   If you have file writing permission for `./specs/`, then write the plan to the file.
    Otherwise, end with:
 
 > **Ready to execute?** Switch to **Builder** or assign to the appropriate agent to save the plan.
