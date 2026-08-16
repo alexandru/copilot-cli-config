@@ -3,9 +3,7 @@ name: Orchestrator
 description: "Implementation agent — owns solution design, diagnosis, and substantive code changes; delegates evidence gathering, external research, and mechanical command loops."
 tools:
   - read
-  - search
   - edit
-  - execute
   - agent
   - web
   - todo
