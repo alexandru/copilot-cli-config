@@ -5,11 +5,7 @@
     "effortLevel": "medium",
     "subagents": {
       "agents": {
-        "Builder": {
-          "model": "gpt-5.3-codex",
-          "effortLevel": "medium"
-        },
-        "Planner": {
+        "Orchestrator": {
           "model": "gpt-5.3-codex",
           "effortLevel": "medium"
         },
@@ -58,11 +54,7 @@
     "effortLevel": "medium",
     "subagents": {
       "agents": {
-        "Builder": {
-          "model": "claude-sonnet-5",
-          "effortLevel": "medium"
-        },
-        "Planner": {
+        "Orchestrator": {
           "model": "claude-sonnet-5",
           "effortLevel": "medium"
         },
@@ -119,10 +111,7 @@
     "model": "auto",
     "subagents": {
       "agents": {
-        "Builder": {
-          "model": "auto"
-        },
-        "Planner": {
+        "Orchestrator": {
           "model": "auto"
         }
       }
@@ -133,10 +122,7 @@
     "model": "auto",
     "subagents": {
       "agents": {
-        "Builder": {
-          "model": "auto"
-        },
-        "Planner": {
+        "Orchestrator": {
           "model": "auto"
         }
       }

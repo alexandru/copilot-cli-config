@@ -17,10 +17,10 @@ export COPILOT_HOME=/absolute/path/to/copilot-cli-config
 **2)** Define this alias, also in `~/.zshrc`, `~/.bashrc` or `~/.profile`:
 
 ```bash
-alias copilot='command copilot --agent Builder'
+alias copilot='command copilot --agent Orchestrator'
 ```
 
-The point is to choose a default agent from which to start, and `Builder` should be that default.
+The point is to choose a default agent from which to start, and `Orchestrator` should be that default.
 
 **3)** Choose a model preset before first use and whenever you want to switch profiles:
 
@@ -28,7 +28,7 @@ The point is to choose a default agent from which to start, and `Builder` should
 ./bin/copilot-switch work
 # or
 ./bin/copilot-switch personal
-# or, use automatic model selection for Builder and Planner
+# or, use automatic model selection for Orchestrator
 ./bin/copilot-switch work-auto
 ./bin/copilot-switch personal-auto
 ```
@@ -43,8 +43,7 @@ Both JSONC inputs support comments.
 
 Main agents:
 
-- `Builder`: implements changes; delegates evidence, research, and checks.
-- `Planner`: answers questions and prepares implementation plans; read-only.
+- `Orchestrator`: implements changes; delegates evidence, research, and checks.
 
 Sub-agents:
 
