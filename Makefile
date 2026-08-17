@@ -20,6 +20,7 @@ update-skills:
 		resolving-merge-conflicts \
 		tdd
 	npx skills add https://github.com/VirtusLab/cellar/ -y
+	npx skills add https://github.com/JuliusBrussee/caveman -y --skill caveman
 	@echo "---"
 	@echo "Review with: git diff"
 	@echo "Commit only after manual review."
