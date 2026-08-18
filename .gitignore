@@ -1,5 +1,5 @@
 # Local/runtime Copilot artifacts only — never source configuration.
-# Tracked on purpose: settings.json, agents/, skills/, README.md,
+# Tracked on purpose: settings.json, mcp-config.json, agents/, skills/, README.md,
 # Makefile, skills-lock.json, package.json, test/.
 # .plans/ is intentionally NOT ignored.
 

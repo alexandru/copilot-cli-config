@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "mcp-intellij-idea": {
+      "type": "sse",
+      "url": "http://localhost:64342/sse",
+      "tools": ["*"]
+    },
+    "mcp-metals": {
+      "type": "http",
+      "url": "http://localhost:54640/mcp",
+      "tools": ["*"]
+    },
+    "mcp-chrome-devtools": {
+      "type": "local",
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest"],
+      "tools": ["*"]
+    }
+  }
+}
