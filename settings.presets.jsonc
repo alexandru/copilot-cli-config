@@ -9,6 +9,10 @@
           "model": "gpt-5.3-codex",
           "effortLevel": "medium"
         },
+        "Solo": {
+          "model": "gpt-5.3-codex",
+          "effortLevel": "medium"
+        },
         "Explorer": {
           "model": "claude-haiku-4.5"
         },
@@ -52,6 +56,10 @@
     "subagents": {
       "agents": {
         "Orchestrator": {
+          "model": "claude-sonnet-5",
+          "effortLevel": "medium"
+        },
+        "Solo": {
           "model": "claude-sonnet-5",
           "effortLevel": "medium"
         },
@@ -106,6 +114,9 @@
       "agents": {
         "Orchestrator": {
           "model": "auto"
+        },
+        "Solo": {
+          "model": "auto"
         }
       }
     }
@@ -116,6 +127,9 @@
     "subagents": {
       "agents": {
         "Orchestrator": {
+          "model": "auto"
+        },
+        "Solo": {
           "model": "auto"
         }
       }
