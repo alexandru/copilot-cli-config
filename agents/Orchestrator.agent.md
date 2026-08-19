@@ -3,10 +3,14 @@ name: Orchestrator
 description: "Implementation agent — owns solution design, diagnosis, and substantive code changes; delegates evidence gathering, external research, and mechanical command loops."
 tools:
   - read
+  - search
   - edit
   - agent
   - web
   - todo
+  - "mcp-intellij-idea/*"
+  - "mcp-metals/*"
+  - "mcp-chrome-devtools/*"
 user-invocable: true
 ---
 
