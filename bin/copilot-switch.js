@@ -9,7 +9,7 @@ const commonFile = path.join(root, "settings.common.jsonc");
 const presetsFile = path.join(root, "settings.presets.jsonc");
 const settingsFile = path.join(root, "settings.json");
 const presetMetadataKeys = new Set(["common", "extends"]);
-const primaryAgents = ["Orchestrator", "Solo"];
+const primaryAgents = ["Orchestrator"];
 
 function fail(message) {
   console.error(`Error: ${message}`);

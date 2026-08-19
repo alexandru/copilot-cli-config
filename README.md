@@ -44,7 +44,6 @@ Both JSONC inputs support comments.
 Main agents:
 
 - `Orchestrator`: implements changes; delegates evidence, research, and checks.
-- `Solo`: independently performs reasoning, research, changes, and verification without delegation.
 
 Sub-agents:
 

@@ -1,9 +1,6 @@
 {
   "name": "copilot-cli-config",
   "private": true,
-  "scripts": {
-    "test": "node --test"
-  },
   "dependencies": {
     "comment-json": "^4.2.5"
   }
