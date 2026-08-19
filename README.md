@@ -25,15 +25,12 @@ The point is to choose a default agent from which to start, and `Orchestrator` s
 **3)** Choose a model preset before first use and whenever you want to switch profiles:
 
 ```sh
-./bin/copilot-switch work
-# or
-./bin/copilot-switch personal
-# or, use automatic model selection for Orchestrator
+# Example:
 ./bin/copilot-switch work-auto
-./bin/copilot-switch personal-auto
 ```
 
 **WARN:** must run `copilot-switch` at least once, otherwise `settings.json` is missing. The switcher generates `settings.json` from:
+
 - `settings.common.jsonc`
 - `settings.presets.jsonc`
 
@@ -43,7 +40,7 @@ Both JSONC inputs support comments.
 
 Main agents:
 
-- `Orchestrator`: implements changes; delegates evidence, research, and checks.
+- `Orchestrator` (default agent): implements changes; delegates evidence, research, and checks.
 
 Sub-agents:
 
@@ -61,16 +58,27 @@ Commands use currently selected primary agent and do not override it.
 
 ## Defined skills
 
-- `caveman`: token-efficient response modes with preserved technical accuracy.
-- `cellar`: query the APIs of JVM dependencies (Scala, Java).
-- `codebase-design`: deep-module design vocabulary and principles.
-- `diagnosing-bugs`: disciplined diagnosis for hard bugs and regressions.
-- `domain-modeling`: domain language and architectural decisions.
-- `grilling`: structured decision-tree interviews.
-- `handoff`: prepare context for another agent or session.
-- `resolving-merge-conflicts`: merge and rebase conflict resolution.
-- `simplify`: behavior-preserving code cleanup.
-- `tdd`: test-first development guidance.
+- [alexandru/skills](https://github.com/alexandru/skills/)
+  - `simplify`: behavior-preserving code cleanup.
+- [mattpocock/skills](https://github.com/mattpocock/skills/tree/v1.2.3)
+  - `codebase-design`: deep-module design vocabulary and principles.
+  - `code-review`: review changes against repository standards and the originating specification.
+  - `diagnosing-bugs`: disciplined diagnosis for hard bugs and regressions.
+  - `domain-modeling`: domain language and architectural decisions.
+  - `grill-with-docs`: sharpen a plan or design while creating domain documentation.
+  - `grilling`: structured decision-tree interviews.
+  - `handoff`: prepare context for another agent or session.
+  - `implement`: implement work from a specification or set of tickets.
+  - `improve-codebase-architecture`: find and work through codebase architecture improvements.
+  - `resolving-merge-conflicts`: merge and rebase conflict resolution.
+  - `setup-matt-pocock-skills`: configure a repository for the engineering skills.
+  - `tdd`: test-first development guidance.
+  - `to-spec`: turn the current conversation into a published specification.
+  - `to-tickets`: break a plan or specification into tracer-bullet tickets.
+- [VirtusLab/cellar](https://github.com/VirtusLab/cellar/)
+  - `cellar`: query the APIs of JVM dependencies (Scala, Java).
+- [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman)
+  - `caveman`: token-efficient response modes with preserved technical accuracy.
 
 ### Cellar
 
