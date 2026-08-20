@@ -1,6 +1,6 @@
 # Local/runtime Copilot artifacts only — never source configuration.
-# Tracked on purpose: settings.json, mcp-config.json, agents/, skills/, README.md,
-# Makefile, skills-lock.json, package.json, test/.
+# Tracked on purpose: mcp-config.json, agents/, the command adapters under
+# skills/, README.md, Makefile, package.json, and test/.
 # .plans/ is intentionally NOT ignored.
 
 node_modules/
@@ -18,7 +18,6 @@ session-store.db-journal
 session-store.db-shm
 session-store.db-wal
 sidebar-sessions-state/
-skills/**/agents/openai.*
 data.*
 repo-*.*
 run/

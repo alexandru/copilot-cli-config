@@ -1,6 +1,6 @@
 # My Copilot CLI configuration
 
-The layout and skill content are ported from [alexandru/opencode-config](https://github.com/alexandru/opencode-config)
+The layout and shared skill roster are aligned with [alexandru/opencode-config](https://github.com/alexandru/opencode-config).
 
 ## Installation
 
@@ -14,7 +14,18 @@ git clone https://github.com/alexandru/copilot-cli-config.git ~/.copilot
 export COPILOT_HOME=/absolute/path/to/copilot-cli-config
 ```
 
-**2)** Define this alias, also in `~/.zshrc`, `~/.bashrc` or `~/.profile`:
+**2)** Install the shared third-party skills globally:
+
+```sh
+cd ~/.copilot
+make install-skills
+```
+
+The skills are installed under `~/.agents/skills`, where Copilot CLI,
+OpenCode, and Codex can share them. The Copilot-specific `/grill-me` and
+`/plan-implementation` command adapters remain tracked in this repository.
+
+**3)** Define this alias, also in `~/.zshrc`, `~/.bashrc` or `~/.profile`:
 
 ```bash
 alias copilot='command copilot --agent Orchestrator'
@@ -22,7 +33,7 @@ alias copilot='command copilot --agent Orchestrator'
 
 The point is to choose a default agent from which to start, and `Orchestrator` should be that default.
 
-**3)** Choose a model preset before first use and whenever you want to switch profiles:
+**4)** Choose a model preset before first use and whenever you want to switch profiles:
 
 ```sh
 # Example:
@@ -56,7 +67,7 @@ Commands use currently selected primary agent and do not override it.
 - `/grill-me`: stress-test a plan or decision.
 - `/handoff`: prepare context for another agent or session.
 
-## Defined skills
+## Shared skills
 
 - [alexandru/skills](https://github.com/alexandru/skills/)
   - `simplify`: behavior-preserving code cleanup.
@@ -106,8 +117,10 @@ cellar --version
 cellar telemetry disable
 ```
 
-## Updating Skills
+## Updating shared skills
 
-```
+```sh
 make update-skills
 ```
+
+This reinstalls the configured global skill roster from its upstream sources.
