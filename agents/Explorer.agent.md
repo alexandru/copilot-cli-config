@@ -30,6 +30,7 @@ Prefer other tools. Execute only commands you are confident are read-only, and t
 # Tooling
 
 1. Try available LSP/MCP/IDE tools (IntelliJ IDEA, Metals LSP) for semantic search (e.g., find usages/references, find subtypes, find symbol, etc.)
+  - Do not use MCP servers for doing `glop`, `grep` or `read`, when you could do that with built-in tools.
 2. Use `cellar` skill for public API lookups of JVM dependencies; do not manually download, unpack, or search JAR files for type signatures
 3. Use built-in tools (`search`, `read`) for finding files and reading their contents. Prefer these tools over `execute` when they can gather the same evidence.
 4. Use `execute` only for read-only metadata, archive, bytecode, and binary inspection commands
