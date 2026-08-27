@@ -2,12 +2,12 @@
 {
   "work": {
     "model": "gpt-5.3-codex",
-    "effortLevel": "medium",
+    "effortLevel": "high",
     "subagents": {
       "agents": {
         "Orchestrator": {
           "model": "gpt-5.3-codex",
-          "effortLevel": "medium"
+          "effortLevel": "high"
         },
         "Explorer": {
           "model": "claude-haiku-4.5"
