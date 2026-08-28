@@ -25,3 +25,4 @@ opencode.jsonc
 settings.json
 ide
 vscode.session.*
+open-sessions-state.json
