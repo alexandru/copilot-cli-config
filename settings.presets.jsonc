@@ -2,21 +2,24 @@
 {
   "work": {
     "model": "grok-4.6",
-    "effortLevel": "high",
+    "effortLevel": "medium",
     "subagents": {
       "agents": {
         "Orchestrator": {
           "model": "grok-4.6",
-          "effortLevel": "high"
+          "effortLevel": "medium"
         },
         "Explorer": {
-          "model": "mai-code-1.1-flash"
+          "model": "mai-code-1.1-flash",
+          "effortLevel": "high"
         },
         "Junior": {
-          "model": "mai-code-1.1-flash"
+          "model": "mai-code-1.1-flash",
+          "effortLevel": "high"
         },
         "Librarian": {
-          "model": "mai-code-1.1-flash"
+          "model": "mai-code-1.1-flash",
+          "effortLevel": "high"
         },
         // Built-ins, although these should be disabled (hopefully)
         "explore": {
