@@ -9,6 +9,10 @@
           "model": "grok-4.6",
           "effortLevel": "medium"
         },
+        "Reviewer": {
+          "model": "grok-4.6",
+          "effortLevel": "medium"
+        },
         "Explorer": {
           "model": "mai-code-1.1-flash",
           "effortLevel": "high"
@@ -55,6 +59,10 @@
     "subagents": {
       "agents": {
         "Orchestrator": {
+          "model": "claude-sonnet-5",
+          "effortLevel": "medium"
+        },
+        "Reviewer": {
           "model": "claude-sonnet-5",
           "effortLevel": "medium"
         },
@@ -109,6 +117,9 @@
       "agents": {
         "Orchestrator": {
           "model": "auto"
+        },
+        "Reviewer": {
+          "model": "auto"
         }
       }
     }
@@ -119,6 +130,9 @@
     "subagents": {
       "agents": {
         "Orchestrator": {
+          "model": "auto"
+        },
+        "Reviewer": {
           "model": "auto"
         }
       }

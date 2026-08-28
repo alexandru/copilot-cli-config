@@ -4,6 +4,7 @@
     "github-mcp-server"
   ],
   "subagents": {
+    "maxDepth": 2,
     "disabledSubagents": [
       "explore",
       "task",
