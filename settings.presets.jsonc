@@ -13,11 +13,11 @@
           "model": "grok-4.6",
           "effortLevel": "medium"
         },
-        "Explorer": {
+        "Junior": {
           "model": "mai-code-1.1-flash",
           "effortLevel": "high"
         },
-        "Junior": {
+        "Explorer": {
           "model": "mai-code-1.1-flash",
           "effortLevel": "high"
         },
@@ -66,11 +66,11 @@
           "model": "claude-sonnet-5",
           "effortLevel": "medium"
         },
-        "Explorer": {
+        "Junior": {
           "model": "gpt-5.6-luna",
           "effortLevel": "medium"
         },
-        "Junior": {
+        "Explorer": {
           "model": "gpt-5.6-luna",
           "effortLevel": "medium"
         },
