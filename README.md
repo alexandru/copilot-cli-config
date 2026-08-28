@@ -28,7 +28,7 @@ OpenCode, and Codex can share them. The Copilot-specific `/grill-me` and
 **3)** Define this alias, also in `~/.zshrc`, `~/.bashrc` or `~/.profile`:
 
 ```bash
-alias copilot='command copilot --agent Orchestrator'
+alias copilot='command copilot --agent Orchestrator --yolo'
 ```
 
 The point is to choose a default agent from which to start, and `Orchestrator` should be that default.
