@@ -1,46 +1,46 @@
 // JSONC input: comments supported.
 {
   "work": {
-    "model": "gpt-5.3-codex",
+    "model": "grok-4.6",
     "effortLevel": "high",
     "subagents": {
       "agents": {
         "Orchestrator": {
-          "model": "gpt-5.3-codex",
+          "model": "grok-4.6",
           "effortLevel": "high"
         },
         "Explorer": {
-          "model": "claude-haiku-4.5"
+          "model": "mai-code-1.1-flash"
         },
         "Junior": {
-          "model": "claude-haiku-4.5"
+          "model": "mai-code-1.1-flash"
         },
         "Librarian": {
-          "model": "claude-haiku-4.5"
+          "model": "mai-code-1.1-flash"
         },
         // Built-ins, although these should be disabled (hopefully)
         "explore": {
-          "model": "claude-haiku-4.5"
+          "model": "mai-code-1.1-flash"
         },
         "task": {
-          "model": "claude-haiku-4.5"
+          "model": "mai-code-1.1-flash"
         },
         "general-purpose": {
-          "model": "claude-haiku-4.5"
+          "model": "mai-code-1.1-flash"
         },
         "rubber-duck": {
-          "model": "claude-haiku-4.5"
+          "model": "mai-code-1.1-flash"
         },
         "code-review": {
-          "model": "gpt-5.3-codex",
+          "model": "grok-4.6",
           "effortLevel": "medium"
         },
         "research": {
-          "model": "gpt-5.3-codex",
+          "model": "grok-4.6",
           "effortLevel": "medium"
         },
         "security-review": {
-          "model": "gpt-5.3-codex",
+          "model": "grok-4.6",
           "effortLevel": "medium"
         }
       }
