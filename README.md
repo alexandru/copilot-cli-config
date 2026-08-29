@@ -64,7 +64,7 @@ alias copilot='command copilot --agent Orchestrator --yolo'
 <details>
 <summary>STEP 4 — Choose a model preset</summary>
 
-The [copilot-switch](./bin/copilot-switch.js) utility is for quickly switching between multiple setting presents, for example to help with switching between the set of models you're using.
+The [copilot-switch](./bin/copilot-switch.js) utility is for quickly switching between multiple setting presents (e.g., multiple sets of models assigned to your agents).
 
 ```sh
 # Example:
