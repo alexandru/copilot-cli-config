@@ -5,9 +5,11 @@ const path = require("node:path");
 const { parse } = require("comment-json");
 
 const root = path.resolve(__dirname, "..");
-const commonFile = path.join(root, "settings.common.jsonc");
-const presetsFile = path.join(root, "settings.presets.jsonc");
-const settingsFile = path.join(root, "settings.json");
+const presetsFile = path.join(root, "config.presets.jsonc");
+const outputConfigs = {
+  "settings.json": path.join(root, "settings.common.jsonc"),
+  "mcp-config.json": path.join(root, "mcp-config.common.jsonc"),
+};
 const presetMetadataKeys = new Set(["common", "extends"]);
 const primaryAgents = ["Orchestrator"];
 
@@ -57,7 +59,7 @@ function stripPresetMetadata(config) {
 
 function resolvePreset(presets, presetName, seen = []) {
   if (!Object.prototype.hasOwnProperty.call(presets, presetName)) {
-    fail(`Preset '${presetName}' not found in settings.presets.jsonc`);
+    fail(`Preset '${presetName}' not found in config.presets.jsonc`);
   }
   if (seen.includes(presetName)) {
     fail(`Circular preset inheritance detected: ${seen.concat(presetName).join(" -> ")}`);
@@ -143,15 +145,25 @@ function main() {
     fail(`Preset '${presetName}' not found. Available presets:\n${listPresets(presets)}`);
   }
 
-  const common = loadJson(commonFile);
   const preset = resolvePreset(presets, presetName);
-  const settings = deepMerge(common, preset);
+  const configs = Object.fromEntries(
+    Object.entries(outputConfigs).map(([outputName, commonFile]) => {
+      const config = preset[outputName];
+      if (!config || typeof config !== "object" || Array.isArray(config)) {
+        fail(`Preset '${presetName}' must define '${outputName}' as an object`);
+      }
+      return [outputName, deepMerge(loadJson(commonFile), config)];
+    }),
+  );
 
-  fs.writeFileSync(settingsFile, `${JSON.stringify(settings, null, 2)}\n`);
+  for (const [outputName, config] of Object.entries(configs)) {
+    fs.writeFileSync(path.join(root, outputName), `${JSON.stringify(config, null, 2)}\n`);
+  }
 
   console.log(`Successfully switched to preset: ${presetName}`);
-  console.log("Generated settings.json");
+  console.log(`Generated ${Object.keys(configs).join(" and ")}`);
   console.log("");
+  const settings = configs["settings.json"];
   if (settings.model) {
     console.log(`Default model: ${settings.model} (${settings.effortLevel ?? "default"})`);
     console.log("");

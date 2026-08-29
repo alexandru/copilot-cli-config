@@ -1,0 +1,160 @@
+// JSONC input: comments supported.
+{
+  "work": {
+    "settings.json": {
+      "model": "grok-4.6",
+      "effortLevel": "medium",
+      "subagents": {
+        "agents": {
+          "Orchestrator": {
+            "model": "grok-4.6",
+            "effortLevel": "medium"
+          },
+          "Junior": {
+            "model": "gemini-3.7-flash",
+            "effortLevel": "high"
+          },
+          "Explorer": {
+            "model": "mai-code-1.1-flash",
+            "effortLevel": "high"
+          },
+          "Librarian": {
+            "model": "mai-code-1.1-flash",
+            "effortLevel": "high"
+          },
+          // Built-ins, although these should be disabled (hopefully)
+          "explore": {
+            "model": "mai-code-1.1-flash"
+          },
+          "task": {
+            "model": "mai-code-1.1-flash"
+          },
+          "general-purpose": {
+            "model": "mai-code-1.1-flash"
+          },
+          "rubber-duck": {
+            "model": "mai-code-1.1-flash"
+          },
+          "code-review": {
+            "model": "grok-4.6",
+            "effortLevel": "medium"
+          },
+          "research": {
+            "model": "grok-4.6",
+            "effortLevel": "medium"
+          },
+          "security-review": {
+            "model": "grok-4.6",
+            "effortLevel": "medium"
+          }
+        }
+      }
+    },
+    "mcp-config.json": {
+      "mcpServers": {}
+    }
+  },
+  "personal": {
+    "settings.json": {
+      "model": "claude-sonnet-5",
+      "effortLevel": "medium",
+      "subagents": {
+        "agents": {
+          "Orchestrator": {
+            "model": "claude-sonnet-5",
+            "effortLevel": "medium"
+          },
+          "Junior": {
+            "model": "gpt-5.6-luna",
+            "effortLevel": "medium"
+          },
+          "Explorer": {
+            "model": "gpt-5.6-luna",
+            "effortLevel": "medium"
+          },
+          "Librarian": {
+            "model": "gpt-5.6-luna",
+            "effortLevel": "medium"
+          },
+          // Built-ins, although these should be disabled (hopefully)
+          "explore": {
+            "model": "gpt-5.6-luna",
+            "effortLevel": "medium"
+          },
+          "task": {
+            "model": "gpt-5.6-luna",
+            "effortLevel": "medium"
+          },
+          "general-purpose": {
+            "model": "gpt-5.6-luna",
+            "effortLevel": "medium"
+          },
+          "rubber-duck": {
+            "model": "gpt-5.6-luna",
+            "effortLevel": "medium"
+          },
+          "code-review": {
+            "model": "claude-sonnet-5",
+            "effortLevel": "medium"
+          },
+          "research": {
+            "model": "claude-sonnet-5",
+            "effortLevel": "medium"
+          },
+          "security-review": {
+            "model": "claude-sonnet-5",
+            "effortLevel": "medium"
+          }
+        }
+      }
+    },
+    "mcp-config.json": {
+      "mcpServers": {
+        "mcp-intellij-idea": {
+          "type": "sse",
+          "url": "http://localhost:64342/sse",
+          "tools": ["*"]
+        },
+        "mcp-metals": {
+          "type": "http",
+          "url": "http://localhost:54640/mcp",
+          "tools": ["*"]
+        },
+        "mcp-chrome-devtools": {
+          "type": "local",
+          "command": "npx",
+          "args": ["-y", "chrome-devtools-mcp@latest"],
+          "tools": ["*"]
+        }
+      }
+    }
+  },
+  "work-auto": {
+    "extends": ["work"],
+    "settings.json": {
+      "model": "auto",
+      "subagents": {
+        "agents": {
+          "Orchestrator": {
+            "model": "auto"
+          },
+        },
+      }
+    },
+    "mcp-config.json": {}
+  },
+  "personal-auto": {
+    "extends": ["personal"],
+    "settings.json": {
+      "model": "auto",
+      "subagents": {
+        "agents": {
+          "Orchestrator": {
+            "model": "auto"
+          },
+        },
+      }
+    },
+    "mcp-config.json": {}
+  }
+}

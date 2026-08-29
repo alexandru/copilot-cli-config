@@ -40,12 +40,13 @@ The point is to choose a default agent from which to start, and `Orchestrator` s
 ./bin/copilot-switch work-auto
 ```
 
-**WARN:** must run `copilot-switch` at least once, otherwise `settings.json` is missing. The switcher generates `settings.json` from:
+**WARN:** run `copilot-switch` at least once. The switcher generates `settings.json` and `mcp-config.json` from:
 
 - `settings.common.jsonc`
-- `settings.presets.jsonc`
+- `mcp-config.common.jsonc`
+- `config.presets.jsonc`
 
-Both JSONC inputs support comments.
+All three JSONC inputs support comments.
 
 ## Defined agents
 

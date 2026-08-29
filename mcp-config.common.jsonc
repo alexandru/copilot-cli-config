@@ -1,0 +1,4 @@
+// Settings shared by MCP configurations in every preset.
+{
+  "mcpServers": {}
+}
