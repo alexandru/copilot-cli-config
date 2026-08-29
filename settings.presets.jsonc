@@ -9,10 +9,6 @@
           "model": "grok-4.6",
           "effortLevel": "medium"
         },
-        "Reviewer": {
-          "model": "grok-4.6",
-          "effortLevel": "medium"
-        },
         "Junior": {
           "model": "gemini-3.7-flash",
           "effortLevel": "high"
@@ -59,10 +55,6 @@
     "subagents": {
       "agents": {
         "Orchestrator": {
-          "model": "claude-sonnet-5",
-          "effortLevel": "medium"
-        },
-        "Reviewer": {
           "model": "claude-sonnet-5",
           "effortLevel": "medium"
         },
@@ -118,9 +110,6 @@
         "Orchestrator": {
           "model": "auto"
         },
-        "Reviewer": {
-          "model": "auto"
-        }
       }
     }
   },
@@ -132,9 +121,6 @@
         "Orchestrator": {
           "model": "auto"
         },
-        "Reviewer": {
-          "model": "auto"
-        }
       }
     }
   }
