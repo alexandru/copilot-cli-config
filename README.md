@@ -7,6 +7,8 @@ Part of [alexandru/agents-config](https://github.com/alexandru/agents-config).
 <details>
 <summary>STEP 1 — Clone the repository</summary>
 
+### Clone the repository
+
 **WARN** — This is for a fresh Copilot instalation (no history):
 
 ```sh
@@ -39,7 +41,9 @@ export COPILOT_HOME=/absolute/path/to/copilot-config
 </details>
 
 <details>
-<summary>STEP 2 — Install the shared third-party skills globally</summary>
+<summary>STEP 2 — Install the shared skills globally</summary>
+
+### Install the shared skills globally
 
 ```sh
 cd ~/.copilot
@@ -64,6 +68,8 @@ alias copilot='command copilot --agent Orchestrator --yolo'
 <details>
 <summary>STEP 4 — Choose a configuration preset</summary>
 
+### Choose a configuration preset
+
 The [copilot-switch](./bin/copilot-switch.js) utility is for quickly switching between multiple setting presents (e.g., multiple sets of models assigned to your agents).
 
 ```sh
@@ -82,7 +88,9 @@ The switcher generates `settings.json` and `mcp-config.json` (Copilot's main con
 </details>
 
 <details>
-<summary>STEP 5 — (optional) Install Cellar</summary>
+<summary>STEP 5 — Install Cellar (optional)</summary>
+
+### Install Cellar (optional)
 
 [Cellar](https://github.com/VirtusLab/cellar) is useful for JVM dependency API lookup, and this repo's [Makefile](./Makefile) also installs its associated skill.
 
