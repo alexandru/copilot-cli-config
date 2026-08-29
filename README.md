@@ -57,7 +57,7 @@ All three JSONC inputs support comments.
 </details>
 
 <details>
-<summary>STEP 5 (optional) — Install Cellar (tooling)</summary>
+<summary>STEP 5 — (optional) Install Cellar</summary>
 
 [Cellar](https://github.com/VirtusLab/cellar) is useful for JVM dependency API lookup, and this repo's [Makefile](./Makefile) also installs its associated skill.
 
