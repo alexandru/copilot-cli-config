@@ -1,6 +1,6 @@
 ---
 name: Librarian
-description: "Use for read-only external research when evidence is unavailable in the conversation or local codebase: documentation, public repositories, archives, dependency artifacts, and dependency source. Returns sourced evidence without modifying the workspace."
+description: "Use for read-only external research unavailable locally: documentation, public repositories, archives, dependency artifacts/source, and non-mutating shell fetch/inspection. Reasoning/cost: low-to-medium."
 tools:
   - read
   - search

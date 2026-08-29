@@ -1,6 +1,6 @@
 ---
 name: Junior
-description: "Use for builds, tests, typechecks, linting, formatting, mechanical edits and fixes, fully specified refactors, renames, repetitive edits, and other fully specified work that modifies state. Do not use for read-only exploration or evidence gathering."
+description: "Use for specified execution: build/test/typecheck/lint/format runs, mechanical fix loops, refactors, renames, repetitive edits, and other state changes. Not for read-only evidence. Reasoning/cost: medium-to-high."
 tools:
   - read
   - search
