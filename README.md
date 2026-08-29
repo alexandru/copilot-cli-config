@@ -64,8 +64,7 @@ alias copilot='command copilot --agent Orchestrator --yolo'
 <details>
 <summary>STEP 4 — Choose a model preset</summary>
 
-> [!NOTE]
-> The `copilot-switch` utility is for quickly switching between multiple setting presents, for example to help with switching between the set of models you're using.
+The [copilot-switch](./bin/copilot-switch.js) utility is for quickly switching between multiple setting presents, for example to help with switching between the set of models you're using.
 
 ```sh
 # Example:
@@ -78,8 +77,7 @@ The switcher generates `settings.json` and `mcp-config.json` (Copilot's main con
 - [mcp-config.common.jsonc](./mcp-config.common.jsonc)
 - [config.presets.jsonc](./config.presets.jsonc)
 
-> [!WARNING]
-> Must run `copilot-switch` at least once, otherwise Copilot's configuration is missing.
+**WARNING:** Must run `copilot-switch` at least once, otherwise Copilot's configuration is missing!
 
 </details>
 
