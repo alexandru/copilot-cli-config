@@ -58,6 +58,8 @@ OpenCode, and Codex can share them. The Copilot-specific `/grill-me` and
 <details>
 <summary>STEP 3 — Configure Bash/Zsh</summary>
 
+### Configure Bash/Zsh
+
 Some configurations can't be set in Copilot's files, so 
 define this useful alias in `~/.zshrc`, `~/.bashrc` or `~/.profile`...
 ```bash
