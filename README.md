@@ -7,11 +7,33 @@ Part of [alexandru/agents-config](https://github.com/alexandru/agents-config).
 <details>
 <summary>STEP 1 — Clone the repository</summary>
 
+**WARN** — This is for a fresh Copilot instalation (no history):
+
 ```sh
 git clone https://github.com/alexandru/copilot-cli-config.git ~/.copilot
+```
 
-# If the path isn't standard, you may need to set this in your 
-# ~/.zshrc, ~/.bashrc or ~/.profile
+**WARN:** This is your Copilot's working directory, so you may already have a `~/.copilot` that you may need to delete, in which case you could lose all your sessios. An alternative would be...
+
+```sh
+if [[ -d ~/.copilot ]]; then
+  # Clones in temporary directory
+  git clone https://github.com/alexandru/copilot-cli-config.git /tmp/copilot-config
+  echo
+  # Sync all the files from clone to your working dir
+  rsync -rcv /tmp/copilot-config/ ~/.copilot/
+  # Doing some index cleanup
+  cd ~/.copilot
+  git pull
+  # Cleanup
+  rm -rf /tmp/copilot-config
+else
+  git clone https://github.com/alexandru/copilot-cli-config.git ~/.copilot
+fi
+```
+
+If the path isn't standard, you may need to set this in your `~/.zshrc`, `~/.bashrc` or `~/.profile`:
+```sh
 export COPILOT_HOME=/absolute/path/to/copilot-cli-config
 ```
 </details>
