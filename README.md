@@ -4,7 +4,8 @@ Part of [alexandru/agents-config](https://github.com/alexandru/agents-config).
 
 ## Installation
 
-**1)** Clone the repository and point `COPILOT_HOME` at the clone:
+<details>
+<summary>STEP 1 — Clone the repository</summary>
 
 ```sh
 git clone https://github.com/alexandru/copilot-cli-config.git ~/.copilot
@@ -13,8 +14,10 @@ git clone https://github.com/alexandru/copilot-cli-config.git ~/.copilot
 # ~/.zshrc, ~/.bashrc or ~/.profile
 export COPILOT_HOME=/absolute/path/to/copilot-cli-config
 ```
+</details>
 
-**2)** Install the shared third-party skills globally:
+<details>
+<summary>STEP 2 — Install the shared third-party skills globally</summary>
 
 ```sh
 cd ~/.copilot
@@ -24,16 +27,20 @@ make install-skills
 The skills are installed under `~/.agents/skills`, where Copilot CLI,
 OpenCode, and Codex can share them. The Copilot-specific `/grill-me` and
 `/plan-implementation` command adapters remain tracked in this repository.
+</details>
 
-**3)** Define this alias, also in `~/.zshrc`, `~/.bashrc` or `~/.profile`:
+<details>
+<summary>STEP 3 — Configure Bash/Zsh</summary>
 
+Some configurations can't be set in Copilot's files, so 
+define this useful alias in `~/.zshrc`, `~/.bashrc` or `~/.profile`...
 ```bash
 alias copilot='command copilot --agent Orchestrator --yolo'
 ```
+</details>
 
-The point is to choose a default agent from which to start, and `Orchestrator` should be that default.
-
-**4)** Choose a model preset before first use and whenever you want to switch profiles:
+<details>
+<summary>STEP 4 — Choose a model preset</summary>
 
 ```sh
 # Example:
@@ -47,6 +54,7 @@ The point is to choose a default agent from which to start, and `Orchestrator` s
 - `config.presets.jsonc`
 
 All three JSONC inputs support comments.
+</details>
 
 ## Defined agents
 
