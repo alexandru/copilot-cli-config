@@ -1,6 +1,6 @@
 # My Copilot CLI configuration
 
-The layout and shared skill roster are aligned with [alexandru/opencode-config](https://github.com/alexandru/opencode-config).
+Part of [alexandru/agents-config](https://github.com/alexandru/agents-config).
 
 ## Installation
 
