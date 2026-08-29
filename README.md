@@ -52,7 +52,7 @@ All three JSONC inputs support comments.
 
 Main agents:
 
-- `Orchestrator` (default agent): owns solution design and substantive code changes; delegates review, searches, verification, and mechanical work.
+- `Orchestrator` (default agent): implements changes; delegates evidence, research, and checks.
 
 Sub-agents:
 
