@@ -2,25 +2,25 @@
 {
   "work": {
     "settings.json": {
-      "model": "grok-4.6",
-      "effortLevel": "medium",
+      "model": "gemini-3.7-flash",
+      "effortLevel": "high",
       "subagents": {
         "agents": {
           "Orchestrator": {
-            "model": "grok-4.6",
-            "effortLevel": "medium"
+            "model": "gemini-3.7-flash",
+            "effortLevel": "high"
           },
           "Junior": {
-            "model": "gemini-3.7-flash",
+            "model": "mai-code-1.1-flash",
             "effortLevel": "high"
           },
           "Explorer": {
             "model": "mai-code-1.1-flash",
-            "effortLevel": "high"
+            "effortLevel": "medium"
           },
           "Librarian": {
             "model": "mai-code-1.1-flash",
-            "effortLevel": "high"
+            "effortLevel": "medium"
           },
           // Built-ins, although these should be disabled (hopefully)
           "explore": {
